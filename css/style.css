@@ -559,17 +559,19 @@ main {
 }
 
 /* 祖父江町の魅力ページ & アクセスページ 共通アイテムスタイル */
-.about-content .about-item,
-.access-content .access-item {
+.about-content .about-item, /* 元のスタイル */
+.access-content .access-item, /* 元のスタイル */
+.about-detail-page .about-item { /* 新しい詳細ページ用の共通スタイル */
     background: #FFFFFF;
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(184, 134, 11, 0.2);
-    border-left: 7px solid #FFD700; /* 金色の太い左ボーダー */
+    border-left: 7px solid #FFD700;
 }
 .about-content .about-item h3,
-.access-content .access-item h3 {
+.access-content .access-item h3,
+.about-detail-page .about-item h3 {
     font-family: 'Shippori Mincho', serif;
     font-size: 2em;
     color: #B8860B;
@@ -577,7 +579,8 @@ main {
     font-weight: 700;
 }
 .about-content .about-item h4,
-.access-content .access-item h4 {
+.access-content .access-item h4,
+.about-detail-page .about-item h4 { /* 新しい詳細ページ用の共通スタイル */
     font-family: 'Noto Serif JP', serif;
     font-size: 1.4em;
     color: #8B4513;
@@ -586,31 +589,52 @@ main {
     font-weight: 700;
 }
 .about-content .about-item ul,
-.access-content .access-item ul {
+.access-content .access-item ul,
+.about-detail-page .about-item ul { /* 新しい詳細ページ用の共通スタイル */
     list-style: none;
     padding-left: 0;
     margin-bottom: 15px;
 }
 .about-content .about-item ul li,
-.access-content .access-item ul li {
+.access-content .access-item ul li,
+.about-detail-page .about-item ul li { /* 新しい詳細ページ用の共通スタイル */
     padding-left: 25px;
     position: relative;
     margin-bottom: 10px;
     font-size: 1.05em;
 }
 .about-content .about-item ul li::before,
-.access-content .access-item ul li::before {
+.access-content .access-item ul li::before,
+.about-detail-page .about-item ul li::before { /* 新しい詳細ページ用の共通スタイル */
     content: "◆";
     color: #FFD700;
     position: absolute;
     left: 0;
     font-size: 1.1em;
 }
-.about-content .about-item .inline-image {
+.about-content .about-item .inline-image, /* 元のスタイル */
+.about-detail-page .about-item .main-image { /* 詳細ページのメイン画像にも適用 (既に .main-image で指定あるが念のため) */
     border-radius: 6px;
     border: 2px solid #FFD700;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #FFF8E7; /* SVG背景が透明な場合に備えて */
+    padding: 5px; /* SVGと枠線の間に少し余白 */
+    box-sizing: border-box;
 }
+
+/* おすすめのお店のタグ */
+.shop-tag {
+    display: inline-block;
+    background-color: #FFF8DC; /* Cornsilk */
+    color: #B8860B;
+    padding: 3px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid #F0E68C;
+}
+
 
 /* アクセスページの地図 */
 .map-container {
