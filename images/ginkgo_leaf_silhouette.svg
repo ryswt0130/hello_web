@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path fill="#FFD700" d="M50,0 C20,25 20,70 50,100 C80,70 80,25 50,0 Z M50,85 C30,65 30,35 50,15 C70,35 70,65 50,85 Z M40,40 Q50,50 60,40 Q50,60 40,40 Z"/>
+  <path fill="none" stroke="#B8860B" stroke-width="2" d="M50,0 C20,25 20,70 50,100 C80,70 80,25 50,0 Z"/>
+  <!-- もっと簡略化された扇型に近いシルエット -->
+  <!-- <path fill="#FFD700" stroke="#B8860B" stroke-width="2" d="M20 90 Q50 70 80 90 L90 10 L50 0 L10 10 Z" /> -->
+</svg>

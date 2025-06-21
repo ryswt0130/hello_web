@@ -8,7 +8,9 @@ body, h1, h2, h3, p, ul, li, a {
 
 body {
     font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
-    background-color: #FFF8E7; /* 淡いクリーム色 (コスミックラテ) - 黄色ベースの背景 */
+    background-color: #FFF8E7; /* 淡いクリーム色 (コスミックラテ) */
+    background-image: url('https://www.transparenttextures.com/patterns/washi.png'); /* 和紙テクスチャ */
+    background-repeat: repeat;
 }
 
 .container {
@@ -20,12 +22,26 @@ body {
 
 /* ヘッダー */
 header {
-    background: #FFD700; /* メインカラー: 金色 (ゴールド) */
+    background: linear-gradient(to bottom, #FFDE59, #FFD700); /* 金色グラデーション */
     color: #3D2B1F; /* 濃い茶色 */
     padding: 20px 0;
     border-bottom: 5px solid #B8860B; /* アクセント: ダークゴールデンロッド */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25); /* 影をより自然に、少し濃く */
+    position: relative; /* Gold Scaleテクスチャ用 */
+    z-index: 10; /* 他の要素より手前に */
 }
+header::before { /* Gold Scale テクスチャを薄く重ねる */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/gold-scale.png');
+    opacity: 0.1; /* 透明度で調整 */
+    z-index: -1;
+}
+
 
 header .container {
     display: flex;
@@ -168,8 +184,22 @@ main {
     margin-bottom: 30px;
     color: #B8860B;
     padding-bottom: 10px;
-    border-bottom: 2px solid #FFD700;
-    display: inline-block; /* 中央寄せのためにブロック化解除 */
+    /* border-bottom: 2px solid #FFD700; */
+    display: inline-block;
+    position: relative; /* 擬似要素による下線のため */
+}
+/* セクション見出しの装飾下線 */
+.pickup-spots h3::after, .charm-digest h3::after, .map-section h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px; /* 位置調整 */
+    width: 100%; /* 親要素の幅に合わせる */
+    max-width: 200px; /* 下線の最大幅 */
+    height: 3px;
+    background: linear-gradient(to right, transparent, #B8860B, transparent); /* 中央が濃いグラデーション */
+    border-radius: 2px;
 }
 .text-center { /* 親要素に適用して見出しを中央寄せ */
     text-align: center;
@@ -185,18 +215,54 @@ main {
 
 .spot-card, .charm-card {
     background: #fff;
-    border: 1px solid #F0E68C; /* カーキ */
-    border-radius: 8px; /* 角丸を大きく */
+    /* border: 1px solid #F0E68C; */
+    border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(184, 134, 11, 0.2); /* ダークゴールデンロッドの薄い影 */
+    box-shadow: 0 5px 12px rgba(184, 134, 11, 0.22); /* 影を調整 */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+/* カードの装飾枠線（巻物風） */
+.spot-card::before, .spot-card::after,
+.charm-card::before, .charm-card::after {
+    content: '';
+    position: absolute;
+    background-color: #B8860B;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+/* 上下の巻物軸 */
+.spot-card::before, .charm-card::before {
+    height: 10px;
+    width: calc(100% + 20px);
+    left: -10px;
+    top: -15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.22); /* 軸の影も調整 */
+}
+.spot-card::after, .charm-card::after {
+    height: 10px;
+    width: calc(100% + 20px);
+    left: -10px;
+    bottom: -15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.22); /* 軸の影も調整 */
 }
 .spot-card:hover, .charm-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 16px rgba(184, 134, 11, 0.3);
+    box-shadow: 0 10px 22px rgba(184, 134, 11, 0.33); /* ホバー時の影を強調 */
 }
+.spot-card:hover::before, .charm-card:hover::before {
+    top: -18px;
+    height: 12px;
+}
+.spot-card:hover::after, .charm-card:hover::after {
+    bottom: -18px;
+    height: 12px;
+}
+
 
 .spot-card img, .charm-card img {
     max-width: 100%;
@@ -204,7 +270,7 @@ main {
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 15px;
-    border: 2px solid #FFD700; /* 金色の枠 */
+    border: 2px solid #FFD700;
 }
 
 .spot-card h4, .charm-card h4 {
@@ -222,30 +288,30 @@ main {
 
 .btn, .btn-spot-detail, .btn-charm-detail, .btn-back { /* ボタン共通スタイル */
     display: inline-block;
-    background: #FFD700; /* 金色 */
-    color: #3D2B1F; /* 濃い茶色 */
-    padding: 10px 20px;
+    background: linear-gradient(to bottom, #FFD700, #FFC700);
+    color: #3D2B1F;
+    padding: 12px 22px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: 700;
     font-family: 'Noto Serif JP', serif;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    border: 1px solid #B8860B; /* ダークゴールデンロッド */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: 1px solid #B8860B;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative; /* アニメーションの基準点 */
-    outline: none; /* クリック時のデフォルトアウトラインを消す */
+    box-shadow: 0 3px 6px rgba(100, 70, 30, 0.25), inset 0 -2px 1px rgba(0,0,0,0.12); /* 影の色を調整 */
+    position: relative;
+    outline: none;
 }
 .btn:hover, .btn-spot-detail:hover, .btn-charm-detail:hover, .btn-back:hover {
-    background: #DAA520; /* 少し明るいゴールデンロッド */
+    background: linear-gradient(to bottom, #FFDE59, #FFD700);
     color: #3D2B1F;
-    transform: translateY(-3px); /* 少し多めに浮き上がる */
-    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(100, 70, 30, 0.3), inset 0 -1px 0px rgba(0,0,0,0.05); /* 影の色を調整 */
 }
 .btn:active, .btn-spot-detail:active, .btn-charm-detail:active, .btn-back:active {
-    transform: translateY(1px); /* クリック時に少し沈む */
-    box-shadow: 0 2px 3px rgba(0,0,0,0.15);
-    background: #B8860B; /* ダークゴールデンロッド (押した感を出す) */
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 0 2px 4px rgba(100, 70, 30, 0.2), inset 0 1px 2px rgba(0,0,0,0.2); /* 影の色を調整 */
+    background: linear-gradient(to top, #B8860B, #DAA520);
     color: #FFF8E7;
 }
 
@@ -549,13 +615,43 @@ main {
 
 /* フッター */
 footer {
-    background: #3D2B1F; /* 濃い茶色 */
+    background: linear-gradient(to top, #3D2B1F, #5A4D41); /* 濃い茶色のグラデーション */
     color: #FFF8E7; /* コスミックラテ */
     text-align: center;
     padding: 35px 0;
     margin-top: 40px;
     border-top: 5px solid #FFD700; /* 金色 */
+    position: relative; /* Gold Scaleテクスチャ用 */
+    z-index: 10;
 }
+footer::before { /* Gold Scale テクスチャを薄く重ねる */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/gold-scale.png');
+    opacity: 0.05; /* フッターなのでさらに薄く */
+    z-index: -1;
+}
+
+/* フッターに銀杏の葉のモチーフを追加 */
+footer .ginkgo-motif {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 50px; /* サイズは適宜調整 */
+    height: auto;
+    opacity: 0.2; /* 薄く表示 */
+    pointer-events: none; /* クリックイベントを透過 */
+}
+/* もし左側にも置くなら */
+/* footer .ginkgo-motif.left {
+    left: 20px;
+    right: auto;
+    transform: scaleX(-1); /* 反転させる場合 */
+} */
 
 footer p {
     color: #FFF8E7;

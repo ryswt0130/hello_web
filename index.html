@@ -79,20 +79,26 @@
                 <div class="svg-map-container">
                     <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mapTitle" role="img">
                         <title id="mapTitle">祖父江町わびさび名所マップ</title>
-                        <!-- 背景のようなもの (例: 薄い色の四角) -->
-                        <rect width="100%" height="100%" fill="#FAF0E6" />
+                        <!-- 背景テクスチャ -->
+                        <defs>
+                            <pattern id="map-texture" patternUnits="userSpaceOnUse" width="100" height="100">
+                                <image href="https://www.transparenttextures.com/patterns/old-map.png" x="0" y="0" width="100" height="100" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#map-texture)" opacity="0.3"/>
+                        <rect width="100%" height="100%" fill="#FAF0E6" opacity="0.7"/> /* ベースの色を少し重ねる */
 
                         <!-- 川や主要道路のイメージ (非常に簡略化) -->
-                        <path d="M 0 150 Q 100 120 200 150 T 400 150" stroke="#A0C8E0" stroke-width="10" fill="none" />
+                        <path d="M 0 150 Q 100 120 200 150 T 400 150" stroke="#A0C8E0" stroke-width="10" fill="none" opacity="0.8" />
                         <path d="M 100 0 V 300" stroke="#D3D3D3" stroke-width="8" fill="none" />
                         <path d="M 300 0 V 300" stroke="#D3D3D3" stroke-width="8" fill="none" />
 
                         <!-- スポットの配置 (x, y, 色, テキスト, リンク先) -->
                         <a href="meisho/wasabi_sabi_1.html">
                             <g class="map-spot" transform="translate(50, 50)">
-                                <rect x="-10" y="-10" width="20" height="20" fill="#B8860B" stroke="#3D2B1F" stroke-width="1"/>
-                                <!-- ドット絵風の「W1」のような文字を表現するのはSVGだけでは難しいので形状で表現 -->
-                                <text x="15" y="5" class="map-spot-label">わびさび処1</text>
+                                <!-- 欠けた机のイメージ -->
+                                <path d="M-12 -8 L12 -8 L12 8 L8 8 L8 5 L-8 5 L-8 8 L-12 8 Z M -10 -6 L10 -6 L10 3 L-10 3 Z M 5 6 L 7 6 L 7 7 L 5 7 Z" fill="#B8860B" stroke="#3D2B1F" stroke-width="0.5"/>
+                                <text x="15" y="5" class="map-spot-label">欠けた机</text>
                             </g>
                         </a>
                         <a href="meisho/suez.html">
@@ -132,9 +138,18 @@
                         </a>
                         <a href="meisho/wasabi_sabi_2.html">
                             <g class="map-spot" transform="translate(300, 130)">
-                                <rect x="-10" y="-10" width="20" height="20" fill="#B8860B" stroke="#3D2B1F" stroke-width="1"/>
-                                <rect x="-7" y="-7" width="14" height="14" fill="#DAA520"/>
-                                <text x="15" y="5" class="map-spot-label">わびさび処2</text>
+                                <!-- 寂れたガードレールのイメージ -->
+                                <path d="M-12 -2 H12 M-10 2 H10 M0 -10 V10 M-8 -10 V10 M8 -10 V10" stroke="#708090" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M-11 -1 L-9 -3 M0 -9 L2 -11 M7 0 L9 -2 M-7 8 L-5 6 M1 9 L3 7" stroke="#A0522D" stroke-width="0.8"/> <!-- 錆の表現 -->
+                                <text x="15" y="5" class="map-spot-label">寂れたガードレール</text>
+                            </g>
+                        </a>
+                        <a href="meisho/wasabi_sabi_3.html"> <!-- 仮にwasabi_sabi_3.htmlを年代物の看板とする -->
+                            <g class="map-spot" transform="translate(180, 180)">
+                                <!-- 年代物の看板のイメージ -->
+                                <rect x="-15" y="-10" width="30" height="20" fill="#F5DEB3" stroke="#8B4513" stroke-width="1"/>
+                                <text x="-12" y="2" class="map-spot-label" style="font-size:7px; fill:#A0522D;">〇〇商店</text>
+                                <path d="M-10 -5 L-8 -7 M5 3 L7 1 M-12 8 L-10 6" stroke="#A0522D" stroke-width="0.5"/> <!-- ひび割れ・汚れ -->
                             </g>
                         </a>
 
@@ -177,6 +192,8 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 祖父江町わびさび探訪. All Rights Reserved.</p>
+            <img src="images/ginkgo_leaf_silhouette.svg" alt="銀杏の葉モチーフ" class="ginkgo-motif">
+            <!-- <img src="images/ginkgo_leaf_silhouette.svg" alt="銀杏の葉モチーフ" class="ginkgo-motif left"> -->
         </div>
     </footer>
 
