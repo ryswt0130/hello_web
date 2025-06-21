@@ -379,27 +379,42 @@ main {
 }
 .map-spot-label {
     font-family: 'Noto Serif JP', serif;
-    font-size: 10px; /* SVG内のテキストサイズは小さめに */
-    fill: #3D2B1F; /* 濃い茶色 */
-    paint-order: stroke; /* 文字の縁取りをきれいに */
-    stroke: #FFF8E7; /* 背景色に近い色で縁取り */
+    font-size: 10px;
+    fill: #3D2B1F;
+    paint-order: stroke;
+    stroke: #FFF8E7;
     stroke-width: 0.5px;
     stroke-linecap: butt;
     stroke-linejoin: miter;
+    pointer-events: none; /* ラベル自体はクリックイベントを拾わないように */
 }
+.map-spot > g > path,
+.map-spot > g > rect,
+.map-spot > g > circle,
+.map-spot > g > polygon { /* 各アイコンの図形に直接スタイル指定を試みる */
+    /* fill: inherit;  親要素のfillを継承するのではなく、個別に指定した方が確実 */
+    /* stroke: inherit; */
+}
+
 .map-spot:hover .map-spot-label {
     font-weight: bold;
-    fill: #8B4513; /* ホバー時に色変更 */
+    fill: #8B4513;
 }
 .map-spot:hover circle,
 .map-spot:hover rect,
 .map-spot:hover polygon,
-.map-spot:hover path { /* path要素もホバー対象に */
-    stroke: #8B4513; /* ホバー時の枠線色を強調 */
-    stroke-width: 1.5px; /* 枠線太さも統一 */
+.map-spot:hover path {
+    stroke: #8B4513;
+    stroke-width: 1.5px;
     opacity: 0.7;
     cursor: pointer;
 }
+/* 個別アイコンのデフォルト色指定 (fillがCSSで上書きされている可能性を考慮) */
+/* .map-spot g path, .map-spot g rect など、より具体的にセレクタを書くことも検討 */
+/* もしHTML側でfillが指定されていれば、それが優先されるはずだが念のため */
+/* 例:
+.map-spot[transform*="translate(50, 50)"] path { fill: #B8860B !important; }
+*/
 
 
 /* ページタイトル (各サブページ) */
