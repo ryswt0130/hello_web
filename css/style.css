@@ -519,17 +519,18 @@ main {
     border: 1px solid #FFD700;
 }
 .meisho-detail .main-image {
-    max-width: 100%;
+    max-width: 80%; /* SVGが大きくなりすぎないように調整 */
+    max-height: 350px; /* 高さを少し抑える */
     height: auto;
-    max-height: 450px;
     object-fit: contain;
     border-radius: 6px;
-    margin-bottom: 20px;
+    margin: 0 auto 25px auto; /* 上マージンを0に、下マージンを少し増やす */
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     border: 2px solid #B8860B;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background-color: #FFF8E7; /* カードのSVGと同様の背景色 */
+    padding: 15px; /* SVGと枠線の間に余白 */
+    box-sizing: border-box;
 }
 
 .meisho-detail h3 {
