@@ -90,51 +90,57 @@
                         <!-- スポットの配置 (x, y, 色, テキスト, リンク先) -->
                         <a href="meisho/wasabi_sabi_1.html">
                             <g class="map-spot" transform="translate(50, 50)">
-                                <circle cx="0" cy="0" r="12" fill="#B8860B"/>
+                                <rect x="-10" y="-10" width="20" height="20" fill="#B8860B" stroke="#3D2B1F" stroke-width="1"/>
+                                <!-- ドット絵風の「W1」のような文字を表現するのはSVGだけでは難しいので形状で表現 -->
                                 <text x="15" y="5" class="map-spot-label">わびさび処1</text>
                             </g>
                         </a>
                         <a href="meisho/suez.html">
                             <g class="map-spot" transform="translate(150, 100)">
-                                <rect x="-10" y="-10" width="20" height="20" fill="#8B4513"/>
+                                <!-- 船のドット絵風アイコン -->
+                                <path d="M-10 -5 h5 v-5 h10 v5 h5 v10 h-20z M-5 0 h10" fill="#8B4513" stroke="#3D2B1F" stroke-width="1"/>
                                 <text x="15" y="5" class="map-spot-label">スエズ運河</text>
                             </g>
                         </a>
                         <a href="meisho/marimo.html">
                             <g class="map-spot" transform="translate(250, 60)">
-                                <circle cx="0" cy="0" r="12" fill="#2E8B57"/>
+                                <!-- マリモ風ドット絵アイコン (円を重ねて表現) -->
+                                <path d="M-8 0 a8 8 0 0 1 16 0 a8 8 0 0 1 -16 0 M-5 -3 h2 v-2 h2 v2 h2 v2 h-2 v2 h-2 v-2 h-2z" fill="#2E8B57" stroke="#3D2B1F" stroke-width="1"/>
                                 <text x="15" y="5" class="map-spot-label">マリモ通り</text>
                             </g>
                         </a>
                          <a href="meisho/ayers_rock.html">
                             <g class="map-spot" transform="translate(80, 220)">
-                                <polygon points="0,-12 12,10 -12,10" fill="#CD853F"/>
+                                <!-- 岩のドット絵風アイコン -->
+                                <path d="M-10 10 h20 v-5 h-5 v-5 h-10 v5 h-5z M-5 0 h10 v-5 h-10z" fill="#CD853F" stroke="#3D2B1F" stroke-width="1"/>
                                 <text x="15" y="5" class="map-spot-label">エアーズロック</text>
                             </g>
                         </a>
                         <a href="meisho/hosohoso_xmas.html">
                             <g class="map-spot" transform="translate(320, 200)">
-                                <polygon points="0,-15 7,15 -7,15" fill="#006400"/>
+                                <!-- クリスマスツリー風ドット絵アイコン -->
+                                <path d="M-2 -12 h4 l-2 -5z M-5 -7 h10 l-2 -5 h-6z M-8 -2 h16 l-2 -5 h-12z M-4 3 h8 v5 h-8z" fill="#006400" stroke="#3D2B1F" stroke-width="0.5"/>
                                 <text x="15" y="5" class="map-spot-label">ほそほそXmas</text>
                             </g>
                         </a>
                          <a href="meisho/beverly_hills.html">
                             <g class="map-spot" transform="translate(200, 250)">
-                                <rect x="-12" y="-8" width="24" height="16" fill="#F0E68C"/>
+                                <!-- 家のドット絵風アイコン -->
+                                <path d="M-10 10 h20 v-10 l-10 -8 l-10 8z M-7 8 v-8 h4 v8z M1 8 v-8 h4 v8z" fill="#F0E68C" stroke="#3D2B1F" stroke-width="1"/>
                                 <text x="15" y="5" class="map-spot-label">ビバリーヒルズ</text>
                             </g>
                         </a>
-                        <!-- 他のわびさびポイントも同様に追加可能 -->
                         <a href="meisho/wasabi_sabi_2.html">
                             <g class="map-spot" transform="translate(300, 130)">
-                                <circle cx="0" cy="0" r="10" fill="#B8860B" stroke="#fff" stroke-width="1"/>
+                                <rect x="-10" y="-10" width="20" height="20" fill="#B8860B" stroke="#3D2B1F" stroke-width="1"/>
+                                <rect x="-7" y="-7" width="14" height="14" fill="#DAA520"/>
                                 <text x="15" y="5" class="map-spot-label">わびさび処2</text>
                             </g>
                         </a>
 
                     </svg>
                 </div>
-                <p style="text-align:center; margin-top: 10px;">※このマップは主要スポットの雰囲気を伝えるもので、正確な地理情報を示すものではありません。各スポット名をクリックすると詳細ページへ移動します。</p>
+                <p style="text-align:center; margin-top: 10px;">※このマップは主要スポットの雰囲気を伝えるもので、正確な地理情報を示すものではありません。各スポットのアイコンをクリックすると詳細ページへ移動します。</p>
             </div>
         </section>
 

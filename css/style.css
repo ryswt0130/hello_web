@@ -233,13 +233,43 @@ main {
     border: 1px solid #B8860B; /* ダークゴールデンロッド */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* アニメーションの基準点 */
+    outline: none; /* クリック時のデフォルトアウトラインを消す */
 }
 .btn:hover, .btn-spot-detail:hover, .btn-charm-detail:hover, .btn-back:hover {
-    background: #B8860B; /* ダークゴールデンロッド */
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: #DAA520; /* 少し明るいゴールデンロッド */
+    color: #3D2B1F;
+    transform: translateY(-3px); /* 少し多めに浮き上がる */
+    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
+.btn:active, .btn-spot-detail:active, .btn-charm-detail:active, .btn-back:active {
+    transform: translateY(1px); /* クリック時に少し沈む */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+    background: #B8860B; /* ダークゴールデンロッド (押した感を出す) */
+    color: #FFF8E7;
+}
+
+/* ボタンにピコピコ感を出す擬似要素 (任意) */
+.btn::after, .btn-spot-detail::after, .btn-charm-detail::after, .btn-back::after {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border: 2px solid transparent;
+    border-radius: 7px; /* ボタンのborder-radius + 2px */
+    z-index: -1;
+    transition: all 0.2s ease-out;
+}
+.btn:hover::after, .btn-spot-detail:hover::after, .btn-charm-detail:hover::after, .btn-back:hover::after {
+    animation: pulse-border 1s infinite;
+}
+
+@keyframes pulse-border {
+    0% { border-color: rgba(255, 215, 0, 0.5); } /* Goldの半透明 */
+    50% { border-color: rgba(218, 165, 32, 0.8); } /* Goldenrodの濃い半透明 */
+    100% { border-color: rgba(255, 215, 0, 0.5); }
+}
+
+
 .btn-spot-detail, .btn-charm-detail { /* 個別ボタンのマージン調整 */
     margin-top: auto; /* カード内でボタンを下に固定 */
 }
@@ -297,10 +327,12 @@ main {
 }
 .map-spot:hover circle,
 .map-spot:hover rect,
-.map-spot:hover polygon {
-    stroke: #3D2B1F;
-    stroke-width: 1.5px;
-    opacity: 0.8;
+.map-spot:hover polygon,
+.map-spot:hover path { /* path要素もホバー対象に */
+    stroke: #8B4513; /* ホバー時の枠線色を強調 */
+    stroke-width: 1.5px; /* 枠線太さも統一 */
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 
