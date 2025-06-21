@@ -1,0 +1,19 @@
+<svg viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+  <!-- 机の天板 -->
+  <path d="M5 15 L95 15 L95 60 L88 60 L88 57 L12 57 L12 60 L5 60 Z" fill="#A0522D" stroke="#5C3317" stroke-width="1"/>
+  <!-- 木目 -->
+  <path d="M10 20 Q30 18 50 22 T90 20" stroke="#8B4513" fill="none" stroke-width="0.8" opacity="0.7"/>
+  <path d="M10 30 Q35 33 50 28 T90 32" stroke="#8B4513" fill="none" stroke-width="0.8" opacity="0.7"/>
+  <path d="M10 40 Q25 45 50 38 T90 42" stroke="#8B4513" fill="none" stroke-width="0.8" opacity="0.7"/>
+  <path d="M10 50 Q30 48 50 52 T90 50" stroke="#8B4513" fill="none" stroke-width="0.8" opacity="0.7"/>
+  <!-- 欠け -->
+  <path d="M88 60 L85 58 L87 55 L90 56 L91 59 Z" fill="#5C3317"/>
+  <!-- スポットライト風の光 -->
+  <defs>
+    <radialGradient id="spotlight_table" cx="0.85" cy="0.8" r="0.5" fx="0.85" fy="0.8">
+      <stop offset="0%" style="stop-color:white; stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:white; stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="100" height="75" fill="url(#spotlight_table)" />
+</svg>

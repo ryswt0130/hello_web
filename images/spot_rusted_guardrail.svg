@@ -1,0 +1,25 @@
+<svg viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 (遠景のぼかし) -->
+  <rect x="0" y="0" width="100" height="75" fill="#E0E0E0"/>
+  <circle cx="30" cy="20" r="15" fill="#B0C4DE" opacity="0.5"/>
+  <circle cx="70" cy="30" r="20" fill="#B0E0E6" opacity="0.5"/>
+
+  <!-- ガードレール -->
+  <rect x="10" y="30" width="80" height="8" fill="#B0BEC5" rx="2" ry="2" stroke="#546E7A" stroke-width="0.5"/>
+  <rect x="10" y="42" width="80" height="8" fill="#B0BEC5" rx="2" ry="2" stroke="#546E7A" stroke-width="0.5"/>
+
+  <rect x="20" y="20" width="6" height="40" fill="#78909C" stroke="#37474F" stroke-width="0.5"/>
+  <rect x="50" y="20" width="6" height="40" fill="#78909C" stroke="#37474F" stroke-width="0.5"/>
+  <rect x="80" y="20" width="6" height="40" fill="#78909C" stroke="#37474F" stroke-width="0.5"/>
+
+  <!-- 錆の表現 (一部を赤茶色で上書き) -->
+  <ellipse cx="23" cy="40" rx="4" ry="10" fill="#A1887F" opacity="0.6" transform="rotate(-15 23 40)"/>
+  <rect x="60" y="32" width="15" height="6" fill="#8D6E63" opacity="0.7" rx="1" ry="1"/>
+  <path d="M30 45 Q 35 42 40 46" stroke="#A1887F" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+  <!-- 蔦 -->
+  <path d="M15 50 C 25 20, 30 55, 40 25 S 50 60, 60 30" stroke="#689F38" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <circle cx="28" cy="28" r="2" fill="#8BC34A"/>
+  <circle cx="45" cy="35" r="2.5" fill="#7CB342"/>
+  <circle cx="58" cy="32" r="1.8" fill="#9CCC65"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+  <!-- 巻物 -->
+  <defs>
+    <linearGradient id="scrollPaper" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F5F5DC;"/> <!-- Beige -->
+      <stop offset="50%" style="stop-color:#FFF8DC;"/> <!-- Cornsilk -->
+      <stop offset="100%" style="stop-color:#F5F5DC;"/>
+    </linearGradient>
+  </defs>
+  <rect x="15" y="10" width="70" height="55" fill="url(#scrollPaper)" rx="5" ry="5" stroke="#8B4513" stroke-width="1"/>
+  <!-- 巻物の軸 (左右) -->
+  <rect x="10" y="8" width="10" height="59" fill="#A0522D" rx="3" ry="3" stroke="#5C3317" stroke-width="0.5"/>
+  <rect x="80" y="8" width="10" height="59" fill="#A0522D" rx="3" ry="3" stroke="#5C3317" stroke-width="0.5"/>
+
+  <!-- 巻物の中身 (かすれた文字風) -->
+  <path d="M30 25 L70 25 M30 30 L65 30 M30 35 L70 35 M30 40 L60 40 M30 45 L68 45 M30 50 L55 50"
+        stroke="#5C3317" stroke-width="0.7" stroke-dasharray="2,2" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- 筆 -->
+  <g transform="translate(75 50) rotate(-20)">
+    <!-- 軸 -->
+    <rect x="-2" y="-25" width="4" height="30" fill="#8B4513" rx="1" ry="1"/>
+    <!-- 金具 -->
+    <rect x="-2.5" y="3" width="5" height="3" fill="#B8860B"/>
+    <!-- 穂先 -->
+    <path d="M0 5 Q-3 15 0 20 Q3 15 0 5 Z" fill="#3D2B1F"/>
+  </g>
+
+  <!-- 灯籠のシルエット (薄く背景に) -->
+  <g transform="translate(15 50) scale(0.6)" opacity="0.2">
+    <rect x="0" y="0" width="10" height="25" fill="#777"/>
+    <polygon points="5 -10, 15 0, 5 10, -5 0" fill="#666"/>
+    <rect x="2" y="-15" width="6" height="5" fill="#555"/>
+  </g>
+</svg>

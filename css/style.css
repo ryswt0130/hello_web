@@ -266,11 +266,14 @@ main {
 
 .spot-card img, .charm-card img {
     max-width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 180px; /* 固定の高さを設定 */
+    object-fit: contain; /* SVG全体が収まるようにしつつ、アスペクト比を保持 */
     border-radius: 6px;
     margin-bottom: 15px;
     border: 2px solid #FFD700;
+    background-color: #FFF8E7; /* SVG背景が透明な場合に備えて薄い背景色 */
+    padding: 10px; /* SVGと枠線の間に少し余白 */
+    box-sizing: border-box; /* paddingとborderを高さに含める */
 }
 
 .spot-card h4, .charm-card h4 {

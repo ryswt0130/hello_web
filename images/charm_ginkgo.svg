@@ -1,0 +1,31 @@
+<svg viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景の小判シルエット (薄く) -->
+  <ellipse cx="30" cy="60" rx="20" ry="10" fill="#FFECB3" opacity="0.3" transform="rotate(-30 30 60)"/>
+  <ellipse cx="70" cy="55" rx="15" ry="8" fill="#FFF9C4" opacity="0.2" transform="rotate(20 70 55)"/>
+
+  <!-- 銀杏の枝 -->
+  <path d="M50 70 C40 50, 30 30, 45 10" stroke="#8B4513" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- 銀杏の葉1 -->
+  <g transform="translate(40 25) rotate(-30)">
+    <path d="M0 0 Q-15 -20 0 -30 Q15 -20 0 0 Z M-5 -25 L0 -20 L5 -25" fill="#FFD700" stroke="#B8860B" stroke-width="0.5"/>
+  </g>
+  <!-- 銀杏の葉2 -->
+  <g transform="translate(55 20) rotate(40)">
+    <path d="M0 0 Q-12 -18 0 -25 Q12 -18 0 0 Z M-4 -20 L0 -15 L4 -20" fill="#FFEE58" stroke="#B8860B" stroke-width="0.5"/>
+  </g>
+   <!-- 銀杏の葉3 (地面に落ちたイメージ) -->
+  <g transform="translate(20 65) rotate(10) scale(0.8)">
+    <path d="M0 0 Q-15 -20 0 -30 Q15 -20 0 0 Z M-5 -25 L0 -20 L5 -25" fill="#FFCA28" stroke="#B8860B" stroke-width="0.5"/>
+  </g>
+
+  <!-- 銀杏の実 -->
+  <circle cx="35" cy="15" r="6" fill="#FFA000"/>
+  <ellipse cx="34" cy="14" rx="1.5" ry="0.8" fill="#FFECB3" opacity="0.7"/>
+
+  <circle cx="60" cy="30" r="5" fill="#FFB300"/>
+  <ellipse cx="59" cy="29" rx="1.2" ry="0.6" fill="#FFFDE7" opacity="0.7"/>
+
+  <circle cx="48" cy="60" r="7" fill="#FFC107"/> <!-- 地面に落ちた実 -->
+  <ellipse cx="47" cy="59" rx="2" ry="1" fill="#FFF9C4" opacity="0.7"/>
+</svg>
