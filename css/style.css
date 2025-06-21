@@ -2,31 +2,29 @@
 body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: #4a4a4a; /* 基本の文字色 (少し柔らかく) */
+    line-height: 1.7; /* 少し行間を広げる */
+    color: #3D2B1F; /* 基本の文字色 (濃い茶色 - ビストル) */
 }
 
 body {
-    font-family: 'Noto Serif JP', 'Shippori Mincho', serif; /* 基本フォントを明朝体に */
-    background-color: #fdfcf8; /* 和紙のような少し黄みがかった白 */
-    /* background-image: url('../images/washi_texture.png'); */ /* 和紙テクスチャ例 */
-    /* background-repeat: repeat; */
+    font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
+    background-color: #FFF8E7; /* 淡いクリーム色 (コスミックラテ) - 黄色ベースの背景 */
 }
 
 .container {
     width: 90%;
-    max-width: 1000px; /* 少し狭めて上品に */
+    max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
 }
 
 /* ヘッダー */
 header {
-    background: #5a5348; /* 焦げ茶に近い色で落ち着きを */
-    color: #fdfcf8;
-    padding: 25px 0;
-    border-bottom: #b08d57 4px solid; /* 金色系のアクセント (彩度抑えめ) */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #FFD700; /* メインカラー: 金色 (ゴールド) */
+    color: #3D2B1F; /* 濃い茶色 */
+    padding: 20px 0;
+    border-bottom: 5px solid #B8860B; /* アクセント: ダークゴールデンロッド */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 header .container {
@@ -36,15 +34,18 @@ header .container {
 }
 
 header .logo h1 {
-    font-family: 'Shippori Mincho', serif; /* ロゴは特に雰囲気のあるフォント */
+    font-family: 'Shippori Mincho', serif;
     font-weight: 700;
 }
 
 header .logo h1 a {
-    color: #fdfcf8;
+    color: #3D2B1F;
     text-decoration: none;
-    font-size: 1.9em;
-    letter-spacing: 1px; /* 少し文字間を調整 */
+    font-size: 2em; /* 少し大きく */
+    letter-spacing: 1px;
+}
+header .logo h1 a:hover {
+    color: #B8860B;
 }
 
 header nav ul {
@@ -53,37 +54,43 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin-left: 25px;
+    margin-left: 30px; /* 間隔を広げる */
 }
 
 header nav ul li a {
-    color: #fdfcf8;
+    color: #3D2B1F;
     text-decoration: none;
-    font-weight: 700; /* 少し太めに */
-    font-size: 1.1em;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    font-size: 1.15em; /* 少し大きく */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
 }
 
-header nav ul li a:hover {
-    color: #d4b275; /* 金色系のアクセント (ホバー時) */
+header nav ul li a:hover,
+header nav ul li a.active { /* 現在のページを示す想定のクラス */
+    color: #8B4513; /* サドルブラウン */
+    border-bottom-color: #8B4513;
 }
 
 /* メインコンテンツ */
 main {
-    padding-bottom: 60px;
+    padding: 20px 0 60px 0; /* 上にも少しパディング */
 }
 
 /* ヒーローセクション (トップページ) */
 .hero {
     background: url('../images/placeholder.jpg') no-repeat center center/cover;
-    height: 65vh; /* 少し高めに */
+    height: 60vh; /* 少し低くしてコンテンツを見やすく */
     display: flex;
+    flex-direction: column; /* テキストを縦に並べる */
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
     position: relative;
-    border-bottom: 5px solid #8c7851; /* 和風な区切り */
+    border-bottom: 5px solid #DAA520; /* ゴールデンロッド */
+    padding: 20px;
 }
 
 .hero::before {
@@ -93,337 +100,411 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(40, 30, 20, 0.6); /* 少し茶色がかったオーバーレイ */
+    background-color: rgba(218, 165, 32, 0.3); /* ゴールデンロッドの半透明オーバーレイ */
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+    background-color: rgba(61, 43, 31, 0.7); /* 濃い茶色の半透明背景で文字を読みやすく */
+    padding: 30px 40px;
+    border-radius: 8px;
 }
 
-.hero h2 { /* キャッチコピー */
-    font-family: 'Noto Serif JP', serif;
-    font-size: 3.8em; /* さらに大きく */
+.hero h2 {
+    font-family: 'Shippori Mincho', serif; /* キャッチコピーも変更 */
+    font-size: 3.2em;
     font-weight: 700;
-    margin-bottom: 25px;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* 影を強く */
+    margin-bottom: 15px; /* 少し詰める */
+    color: #FFD700; /* 金色 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .hero p {
-    font-size: 1.6em;
-    color: #f0f0f0;
-    font-style: italic; /* 少し雰囲気を変える */
+    font-size: 1.4em;
+    color: #FFF8E7; /* コスミックラテ */
+    font-style: normal; /* イタリック解除 */
+    font-weight: 500;
 }
 
-/* 導入セクション (トップページ) */
-.intro-section {
-    padding: 50px 0;
-    text-align: center;
-    background-color: rgba(255,255,255,0.7); /* 半透明の白背景 */
+/* トップページ - イントロダクションセクション */
+.introduction {
+    padding: 40px 0;
+    background-color: #FFFFFF; /* 白背景で清潔感を */
     margin: 30px 0;
-    border-top: 1px dashed #b08d57; /* 金色系の点線 */
-    border-bottom: 1px dashed #b08d57;
+    border-top: 3px solid #FFD700; /* 金色の線 */
+    border-bottom: 3px solid #FFD700;
+    text-align: center;
 }
-
-.intro-section h3 {
+.introduction h2 {
     font-family: 'Shippori Mincho', serif;
-    font-size: 2.3em;
-    margin-bottom: 25px;
-    color: #5a5348; /* ヘッダー背景色と合わせる */
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #B8860B; /* ダークゴールデンロッド */
 }
-
-.intro-section p {
-    font-size: 1.15em;
-    margin-bottom: 25px;
-    color: #5a5348;
-    max-width: 700px; /* 中央寄せで読みやすく */
+.introduction p {
+    font-size: 1.1em;
+    color: #3D2B1F;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.8;
+}
+.introduction p:last-of-type {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #8B4513;
 }
 
-.btn {
+
+/* トップページ - ピックアップスポットセクション */
+.pickup-spots, .charm-digest {
+    padding: 40px 0;
+}
+.pickup-spots h3, .charm-digest h3, .map-section h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #B8860B;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block; /* 中央寄せのためにブロック化解除 */
+}
+.text-center { /* 親要素に適用して見出しを中央寄せ */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.spot-grid, .charm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.spot-card, .charm-card {
+    background: #fff;
+    border: 1px solid #F0E68C; /* カーキ */
+    border-radius: 8px; /* 角丸を大きく */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(184, 134, 11, 0.2); /* ダークゴールデンロッドの薄い影 */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.spot-card:hover, .charm-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(184, 134, 11, 0.3);
+}
+
+.spot-card img, .charm-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 2px solid #FFD700; /* 金色の枠 */
+}
+
+.spot-card h4, .charm-card h4 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #8B4513; /* サドルブラウン */
+}
+.spot-card p, .charm-card p {
+    font-size: 1em;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    color: #3D2B1F;
+}
+
+.btn, .btn-spot-detail, .btn-charm-detail, .btn-back { /* ボタン共通スタイル */
     display: inline-block;
-    background: #b08d57; /* 金色系アクセント */
-    color: #fff;
-    padding: 12px 25px;
+    background: #FFD700; /* 金色 */
+    color: #3D2B1F; /* 濃い茶色 */
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 3px; /* 角を少しだけ丸める */
+    border-radius: 5px;
     font-weight: 700;
     font-family: 'Noto Serif JP', serif;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    border: 1px solid #8c7851; /* 少し濃い色で縁取り */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: 1px solid #B8860B; /* ダークゴールデンロッド */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-.btn:hover {
-    background: #8c7851; /* 少し濃い金色系 */
+.btn:hover, .btn-spot-detail:hover, .btn-charm-detail:hover, .btn-back:hover {
+    background: #B8860B; /* ダークゴールデンロッド */
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.btn-spot-detail, .btn-charm-detail { /* 個別ボタンのマージン調整 */
+    margin-top: auto; /* カード内でボタンを下に固定 */
 }
 
-.thumbnail-gallery img {
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+
+/* マップセクション */
+.map-section {
+    padding: 30px 0;
+    background-color: #FAF0E6; /* リネン (淡いベージュ) */
 }
-.thumbnail-gallery img:hover {
-    transform: scale(1.05);
+.map-placeholder {
+    background-color: #fff;
+    border: 3px dashed #FFD700; /* 金色の破線 */
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map-placeholder p {
+    color: #B8860B;
+    font-style: italic;
+}
+
+/* トップページ - SVGマップコンテナ */
+.svg-map-container {
+    width: 100%;
+    max-width: 600px; /* マップの最大幅 */
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #fff;
+    border: 3px solid #FFD700; /* 金色の枠 */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(184, 134, 11, 0.2);
+}
+.svg-map-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.map-spot-label {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 10px; /* SVG内のテキストサイズは小さめに */
+    fill: #3D2B1F; /* 濃い茶色 */
+    paint-order: stroke; /* 文字の縁取りをきれいに */
+    stroke: #FFF8E7; /* 背景色に近い色で縁取り */
+    stroke-width: 0.5px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+}
+.map-spot:hover .map-spot-label {
+    font-weight: bold;
+    fill: #8B4513; /* ホバー時に色変更 */
+}
+.map-spot:hover circle,
+.map-spot:hover rect,
+.map-spot:hover polygon {
+    stroke: #3D2B1F;
+    stroke-width: 1.5px;
+    opacity: 0.8;
 }
 
 
 /* ページタイトル (各サブページ) */
 .page-title {
-    background: #e6e2d9; /* やや彩度を落としたベージュ系 */
-    padding: 35px 0;
+    background: #FFFACD; /* レモンシフォン (非常に淡い黄色) */
+    padding: 30px 0;
     text-align: center;
-    margin-bottom: 35px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    border-top: 2px solid #FFD700;
+    border-bottom: 2px solid #FFD700;
 }
 
 .page-title h2 {
     font-family: 'Shippori Mincho', serif;
-    font-size: 2.8em;
-    color: #5a5348;
+    font-size: 2.6em;
+    color: #8B4513; /* サドルブラウン */
     font-weight: 700;
 }
 
 /* キーワード強調のスタイル */
 .keyword-wabisabi {
-    background-color: #e6e2d9; /* 薄いベージュ */
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
+    background-color: #F0E68C; /* カーキの薄い版 */
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
     font-weight: bold;
     font-style: italic;
-    color: #7d6e57; /* 少し濃い茶色 */
+    color: #8B4513;
+    border: 1px dashed #B8860B;
 }
 .keyword-unique {
-    border-bottom: 2px dotted #b08d57; /* 金色系の点線下線 */
+    border-bottom: 3px double #FF8C00; /* ダークオレンジの二重下線 */
     font-weight: bold;
-    color: #5a5348;
+    color: #3D2B1F;
+    padding-bottom: 2px;
 }
 
 
 /* 名所一覧ページ */
-.meisho-list .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 25px;
-    margin-bottom: 35px;
-}
-
-.meisho-list .grid-item {
-    background: #fff;
-    border: 1px solid #d1c7b8; /* やや茶系の枠線 */
-    border-radius: 4px;
-    padding: 20px;
-    text-align: left; /* テキストは左寄せに */
-    box-shadow: 0 3px 7px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column; /* 画像とテキストを縦に */
-}
-.meisho-list .grid-item:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-
-.meisho-list .grid-item a {
-    text-decoration: none;
-    color: #4a4a4a;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* aタグの高さをアイテム全体に */
-}
-
-.meisho-list .grid-item img {
-    max-width: 100%;
-    height: 200px; /* 高さを固定 */
-    object-fit: cover; /* アスペクト比を保ちつつカバー */
-    border-radius: 3px;
-    margin-bottom: 15px;
-    border: 1px solid #eee;
-}
-
-.meisho-list .grid-item h4 {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 1.5em;
-    margin-bottom: 8px;
-    color: #8c7851; /* 金色系 */
-    font-weight: 700;
-}
-.meisho-list .grid-item p {
-    font-size: 0.95em;
-    flex-grow: 1; /* 説明文がカードの高さを埋めるように */
-    margin-bottom: 0;
-}
-
-.meisho-list h3 {
+.meisho-list h3 { /* 「わびさびポイント」「ユニークスポット」の小見出し */
     font-family: 'Shippori Mincho', serif;
     font-size: 2em;
-    margin-top: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #FFD700; /* 金色の下線 */
+    padding-bottom: 10px;
+    color: #B8860B; /* ダークゴールデンロッド */
+    text-align: center;
+}
+/* .meisho-list .grid-item スタイルは .spot-card と共通化 */
+.meisho-list .grid-item {
+    background: #fff;
+    border: 1px solid #F0E68C;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(184, 134, 11, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.meisho-list .grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(184, 134, 11, 0.3);
+}
+.meisho-list .grid-item a {
+    text-decoration: none;
+    color: #3D2B1F;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.meisho-list .grid-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
     margin-bottom: 15px;
-    border-bottom: 3px solid #b08d57; /* 金色系の下線 */
-    padding-bottom: 8px;
-    color: #5a5348;
+    border: 2px solid #FFD700;
+}
+.meisho-list .grid-item h4 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #8B4513;
+}
+.meisho-list .grid-item p {
+    font-size: 1em;
+    flex-grow: 1;
+    margin-bottom: 0; /* aタグがクリック領域なのでpのマージンは不要に */
 }
 
 
 /* 名所詳細ページ */
 .meisho-detail {
-    background-color: #fff;
+    background-color: #FFFFFF;
     padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(184, 134, 11, 0.25);
     margin-bottom: 30px;
+    border: 1px solid #FFD700;
 }
 .meisho-detail .main-image {
     max-width: 100%;
     height: auto;
-    max-height: 500px; /* 画像が大きくなりすぎないように */
+    max-height: 450px;
     object-fit: contain;
-    border-radius: 4px;
-    margin-bottom: 25px;
+    border-radius: 6px;
+    margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid #B8860B;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .meisho-detail h3 {
     font-family: 'Shippori Mincho', serif;
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #5a5348;
+    font-size: 2.3em;
+    margin-bottom: 15px;
+    color: #8B4513;
     font-weight: 700;
+    text-align: center;
 }
 
 .meisho-detail p {
-    margin-bottom: 18px;
-    line-height: 1.9; /* 行間を少し広めに */
-    font-size: 1.05em;
-}
-.meisho-detail p strong { /* わびさび度などの強調 */
-    font-weight: 700;
-    color: #8c7851;
-}
-.meisho-detail p em { /* ヒントなどのイタリック */
-    color: #777;
-    font-size: 0.95em;
-}
-
-
-.btn-back {
-    display: inline-block;
-    margin-top: 25px;
-    background: #7d6e57; /* 少し濃い茶系 */
-    color: #fff;
-    padding: 10px 22px;
-    text-decoration: none;
-    border-radius: 3px;
-    font-weight: 700;
-    font-family: 'Noto Serif JP', serif;
-    transition: background-color 0.3s ease;
-    border: 1px solid #5a5348;
-}
-.btn-back:hover {
-    background: #5a5348;
-}
-
-/* 祖父江町の魅力ページ */
-.about-content .about-item {
-    background: #fff;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-    border-left: 5px solid #b08d57; /* 金色系の左ボーダー */
-}
-.about-content .about-item h3 {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 1.9em;
-    color: #8c7851; /* 金色系 */
     margin-bottom: 15px;
+    line-height: 1.8;
+    font-size: 1.1em; /* 少し大きく */
+}
+.meisho-detail p strong {
     font-weight: 700;
+    color: #B8860B; /* ダークゴールデンロッド */
 }
-.about-content .about-item h4 { /* 銀杏まめ知識などの小見出し */
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.3em;
-    color: #5a5348;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-.about-content .about-item ul {
-    list-style: none; /* デフォルトの点を消す */
-    padding-left: 0;
-    margin-bottom: 15px;
-}
-.about-content .about-item ul li {
-    padding-left: 20px;
-    position: relative;
-    margin-bottom: 8px;
-}
-.about-content .about-item ul li::before { /* カスタムリストマーカー */
-    content: "・"; /* または "»" や "❖" など */
-    color: #b08d57; /* 金色系 */
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-.about-content .about-item .inline-image {
-    border-radius: 3px;
-    border: 1px solid #ddd;
+.meisho-detail p em {
+    color: #808080; /* グレー */
+    font-size: 1em;
+    display: block; /* ヒントは改行して表示 */
+    margin-top: 5px;
 }
 
-
-/* アクセスページ */
+/* 祖父江町の魅力ページ & アクセスページ 共通アイテムスタイル */
+.about-content .about-item,
 .access-content .access-item {
-    background: #fff;
+    background: #FFFFFF;
     padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-    border-left: 5px solid #8c7851; /* やや濃い茶系の左ボーダー */
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(184, 134, 11, 0.2);
+    border-left: 7px solid #FFD700; /* 金色の太い左ボーダー */
 }
+.about-content .about-item h3,
 .access-content .access-item h3 {
     font-family: 'Shippori Mincho', serif;
-    font-size: 1.9em;
-    color: #5a5348;
+    font-size: 2em;
+    color: #B8860B;
     margin-bottom: 15px;
     font-weight: 700;
 }
+.about-content .about-item h4,
+.access-content .access-item h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4em;
+    color: #8B4513;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.about-content .about-item ul,
 .access-content .access-item ul {
     list-style: none;
     padding-left: 0;
     margin-bottom: 15px;
 }
+.about-content .about-item ul li,
 .access-content .access-item ul li {
-    padding-left: 20px;
+    padding-left: 25px;
     position: relative;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 1.05em;
 }
+.about-content .about-item ul li::before,
 .access-content .access-item ul li::before {
-    content: "»";
-    color: #b08d57;
+    content: "◆";
+    color: #FFD700;
     position: absolute;
     left: 0;
+    font-size: 1.1em;
 }
-.access-content .access-item strong { /* 名古屋方面からなどの強調 */
-    font-weight: 700;
+.about-content .about-item .inline-image {
+    border-radius: 6px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* アクセスページの地図 */
 .map-container {
     margin-top: 20px;
     position: relative;
-    padding-bottom: 60%; /* 少し縦長に */
+    padding-bottom: 56.25%; /* 16:9 アスペクト比 */
     height: 0;
     overflow: hidden;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 3px solid #FFD700;
+    box-shadow: 0 4px 8px rgba(184, 134, 11, 0.2);
 }
 .map-container iframe {
     position: absolute;
@@ -436,17 +517,17 @@ main {
 
 /* フッター */
 footer {
-    background: #5a5348; /* ヘッダーと合わせる */
-    color: #e6e2d9; /* 明るめの文字色 */
+    background: #3D2B1F; /* 濃い茶色 */
+    color: #FFF8E7; /* コスミックラテ */
     text-align: center;
-    padding: 30px 0;
-    margin-top: 50px;
-    border-top: 3px solid #8c7851; /* 金色系 */
+    padding: 35px 0;
+    margin-top: 40px;
+    border-top: 5px solid #FFD700; /* 金色 */
 }
 
 footer p {
-    color: #e6e2d9;
-    font-size: 0.95em;
+    color: #FFF8E7;
+    font-size: 1em;
 }
 
 /* レスポンシブ対応 */
@@ -455,40 +536,59 @@ footer p {
         flex-direction: column;
     }
     header .logo h1 {
-        margin-bottom: 15px; /* ロゴとナビの間に余白 */
+        margin-bottom: 15px;
     }
     header .logo h1 a {
-        font-size: 1.6em;
+        font-size: 1.8em;
+    }
+    header nav ul {
+        text-align: center; /* ナビ全体を中央寄せ */
     }
     header nav ul li {
         display: block;
-        text-align: center;
-        margin: 12px 0;
-        margin-left: 0; /* インライン時の左マージンをリセット */
+        margin: 10px 0;
+        margin-left: 0;
     }
+    header nav ul li a {
+        padding-bottom: 3px; /* スマホでは下線との間隔を少し狭める */
+    }
+
     .hero h2 {
-        font-size: 2.5em; /* スマホでは少し小さく */
+        font-size: 2.6em;
     }
     .hero p {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
-    .intro-section h3 {
-        font-size: 1.8em;
+    .hero-content {
+        padding: 20px;
     }
+
+    .introduction h2 {
+        font-size: 2em;
+    }
+    .pickup-spots h3, .charm-digest h3, .map-section h3 {
+        font-size: 1.9em;
+    }
+    .spot-grid, .charm-grid {
+        grid-template-columns: 1fr; /* スマホでは1カラム */
+        gap: 20px;
+    }
+    .spot-card img, .charm-card img, .meisho-list .grid-item img {
+        height: 160px;
+    }
+
     .page-title h2 {
-        font-size: 2.2em;
-    }
-    .meisho-list .grid-container {
-        grid-template-columns: 1fr;
-    }
-    .meisho-list .grid-item img {
-        height: 180px; /* スマホでは画像の高さを少し調整 */
+        font-size: 2.1em;
     }
     .meisho-detail h3 {
-        font-size: 1.8em;
+        font-size: 1.9em;
     }
     .about-content .about-item h3,
     .access-content .access-item h3 {
-        font-size: 1.6em;
+        font-size: 1.7em;
+    }
+    .about-content .about-item h4,
+    .access-content .access-item h4 {
+        font-size: 1.2em;
     }
 }

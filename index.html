@@ -30,31 +30,139 @@
         <section class="hero">
             <div class="hero-content container">
                 <h2>金のなる町、祖父江町。</h2>
-                <p>あなたも祖父江で"わびさび"見つけませんか？</p>
+                <p>あなたも祖父江で"わびさび"と"金"を見つけませんか？</p>
             </div>
         </section>
 
-        <section class="intro-section" id="intro-wabisabi">
+        <section class="introduction" id="introduction">
             <div class="container">
-                <h3>わびさびポイントを探しに行こう</h3>
-                <p>祖父江町に隠されたユニークな「わびさび」スポットや面白名所を紹介します。サイトで見たあの場所を実際に訪れてみませんか？</p>
-                <a href="meisho/index.html" class="btn">わびさび名所一覧へ</a>
-                <div class="thumbnail-gallery">
-                    <img src="images/placeholder.jpg" alt="わびさび名所イメージ1" style="width:150px; height:100px; object-fit: cover; margin: 5px; border: 1px solid #ccc;">
-                    <img src="images/placeholder.jpg" alt="わびさび名所イメージ2" style="width:150px; height:100px; object-fit: cover; margin: 5px; border: 1px solid #ccc;">
-                    <img src="images/placeholder.jpg" alt="わびさび名所イメージ3" style="width:150px; height:100px; object-fit: cover; margin: 5px; border: 1px solid #ccc;">
+                <h2>祖父江へようこそ - わびさびと発見の旅へ</h2>
+                <p>かつて祖父江では、銀杏は屋敷の片隅にひっそりと佇む、名もなきシンボルツリーでした。それが、ある日を境に「金のなる木」としての価値を見出され、町は黄金色の銀杏畑へと姿を変えます。しかし、今また、人の営みの変化とともに、その風景は少しずつ移ろい始めています。盛衰の物語、それこそが祖父江の銀杏が持つ「わびさび」の魅力かもしれません。</p>
+                <p>このサイトは、そんな祖父江町の奥深い魅力と、あなただけの「わびさびポイント」や「ユニークスポット」を発見するための手引きです。さあ、探訪の旅に出かけましょう！</p>
+            </div>
+        </section>
+
+        <section class="pickup-spots" id="pickup-spots">
+            <div class="container">
+                <h3>注目のわびさびスポット＆ユニーク名所</h3>
+                <div class="spot-grid">
+                    <article class="spot-card">
+                        <img src="images/placeholder.jpg" alt="わびさびスポット1">
+                        <h4>例：飲食店の欠けた机</h4>
+                        <p>長年愛された証、日常に潜む美しさ。わびさび度★★★☆☆</p>
+                        <a href="meisho/wasabi_sabi_1.html" class="btn-spot-detail">詳しく見る</a>
+                    </article>
+                    <article class="spot-card">
+                        <img src="images/placeholder.jpg" alt="わびさびスポット2">
+                        <h4>例：寂れたガードレール</h4>
+                        <p>時の流れを感じる、道端の芸術品。わびさび度★★★★☆</p>
+                        <a href="meisho/wasabi_sabi_2.html" class="btn-spot-detail">詳しく見る</a>
+                    </article>
+                    <article class="spot-card">
+                        <img src="images/placeholder.jpg" alt="ユニークスポット1">
+                        <h4>祖父江のスエズ運河</h4>
+                        <p>この用水路が世界の物流を支える...かも？</p>
+                        <a href="meisho/suez.html" class="btn-spot-detail">詳しく見る</a>
+                    </article>
+                </div>
+                <div class="text-center">
+                    <a href="meisho/index.html" class="btn">すべての名所を見る</a>
                 </div>
             </div>
         </section>
 
-        <section class="intro-section" id="intro-charm">
+        <section class="map-section" id="map-section">
             <div class="container">
-                <h3>銀杏だけじゃない！祖父江町の魅力</h3>
-                <p>名産の銀杏はもちろん、歴史や文化、おすすめのお店など、祖父江町の魅力をたっぷりご紹介します。</p>
-                <a href="about/index.html" class="btn">祖父江町の魅力を見る</a>
-                <div class="thumbnail-gallery">
-                    <img src="images/placeholder.jpg" alt="祖父江町の魅力イメージ1" style="width:150px; height:100px; object-fit: cover; margin: 5px; border: 1px solid #ccc;">
-                    <img src="images/placeholder.jpg" alt="祖父江町の魅力イメージ2" style="width:150px; height:100px; object-fit: cover; margin: 5px; border: 1px solid #ccc;">
+                <div class="text-center">
+                    <h3>祖父江わびさび探訪マップ</h3>
+                </div>
+                <div class="svg-map-container">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mapTitle" role="img">
+                        <title id="mapTitle">祖父江町わびさび名所マップ</title>
+                        <!-- 背景のようなもの (例: 薄い色の四角) -->
+                        <rect width="100%" height="100%" fill="#FAF0E6" />
+
+                        <!-- 川や主要道路のイメージ (非常に簡略化) -->
+                        <path d="M 0 150 Q 100 120 200 150 T 400 150" stroke="#A0C8E0" stroke-width="10" fill="none" />
+                        <path d="M 100 0 V 300" stroke="#D3D3D3" stroke-width="8" fill="none" />
+                        <path d="M 300 0 V 300" stroke="#D3D3D3" stroke-width="8" fill="none" />
+
+                        <!-- スポットの配置 (x, y, 色, テキスト, リンク先) -->
+                        <a href="meisho/wasabi_sabi_1.html">
+                            <g class="map-spot" transform="translate(50, 50)">
+                                <circle cx="0" cy="0" r="12" fill="#B8860B"/>
+                                <text x="15" y="5" class="map-spot-label">わびさび処1</text>
+                            </g>
+                        </a>
+                        <a href="meisho/suez.html">
+                            <g class="map-spot" transform="translate(150, 100)">
+                                <rect x="-10" y="-10" width="20" height="20" fill="#8B4513"/>
+                                <text x="15" y="5" class="map-spot-label">スエズ運河</text>
+                            </g>
+                        </a>
+                        <a href="meisho/marimo.html">
+                            <g class="map-spot" transform="translate(250, 60)">
+                                <circle cx="0" cy="0" r="12" fill="#2E8B57"/>
+                                <text x="15" y="5" class="map-spot-label">マリモ通り</text>
+                            </g>
+                        </a>
+                         <a href="meisho/ayers_rock.html">
+                            <g class="map-spot" transform="translate(80, 220)">
+                                <polygon points="0,-12 12,10 -12,10" fill="#CD853F"/>
+                                <text x="15" y="5" class="map-spot-label">エアーズロック</text>
+                            </g>
+                        </a>
+                        <a href="meisho/hosohoso_xmas.html">
+                            <g class="map-spot" transform="translate(320, 200)">
+                                <polygon points="0,-15 7,15 -7,15" fill="#006400"/>
+                                <text x="15" y="5" class="map-spot-label">ほそほそXmas</text>
+                            </g>
+                        </a>
+                         <a href="meisho/beverly_hills.html">
+                            <g class="map-spot" transform="translate(200, 250)">
+                                <rect x="-12" y="-8" width="24" height="16" fill="#F0E68C"/>
+                                <text x="15" y="5" class="map-spot-label">ビバリーヒルズ</text>
+                            </g>
+                        </a>
+                        <!-- 他のわびさびポイントも同様に追加可能 -->
+                        <a href="meisho/wasabi_sabi_2.html">
+                            <g class="map-spot" transform="translate(300, 130)">
+                                <circle cx="0" cy="0" r="10" fill="#B8860B" stroke="#fff" stroke-width="1"/>
+                                <text x="15" y="5" class="map-spot-label">わびさび処2</text>
+                            </g>
+                        </a>
+
+                    </svg>
+                </div>
+                <p style="text-align:center; margin-top: 10px;">※このマップは主要スポットの雰囲気を伝えるもので、正確な地理情報を示すものではありません。各スポット名をクリックすると詳細ページへ移動します。</p>
+            </div>
+        </section>
+
+        <section class="charm-digest" id="charm-digest">
+            <div class="container">
+                <h3>祖父江の多彩な魅力</h3>
+                <div class="charm-grid">
+                    <article class="charm-card">
+                        <img src="images/placeholder.jpg" alt="銀杏">
+                        <h4>銀杏 - 金の物語</h4>
+                        <p>シンボルツリーから「金のなる木」へ。その歴史と味わい深い魅力を探る。</p>
+                        <a href="about/index.html#about-ginkgo" class="btn-charm-detail">銀杏について詳しく</a>
+                    </article>
+                    <article class="charm-card">
+                        <img src="images/placeholder.jpg" alt="歴史と文化">
+                        <h4>歴史と文化の薫り</h4>
+                        <p>木曽川の恵みと共に育まれた、祖父江ならではの歴史と文化に触れる。</p>
+                        <a href="about/index.html#about-history" class="btn-charm-detail">歴史・文化を詳しく</a>
+                    </article>
+                    <article class="charm-card">
+                        <img src="images/placeholder.jpg" alt="おすすめのお店">
+                        <h4>おすすめのお店</h4>
+                        <p>地元で愛される味処やお土産店。わびさび探訪の合間に立ち寄りたいスポット。</p>
+                        <a href="about/index.html#about-shops" class="btn-charm-detail">お店情報を詳しく</a>
+                    </article>
+                </div>
+                <div class="text-center">
+                    <a href="about/index.html" class="btn">祖父江の魅力をすべて見る</a>
                 </div>
             </div>
         </section>
